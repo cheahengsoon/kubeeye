@@ -21,7 +21,7 @@ ENV CGO_ENABLED=0
 # Build
 RUN go install -v ./cmd/...
 
-FROM alpine:3.15 as ke-manager
+FROM alpine:3 as ke-manager
 WORKDIR /
 COPY --from=builder /go/bin/ke .
 COPY --from=builder /go/bin/ke-manager .
